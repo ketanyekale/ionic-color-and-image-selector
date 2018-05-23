@@ -1,14 +1,28 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Color And image selector
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list>
+    <ion-row class="colorselect color_{{color.slice(1,7)}}">
+      <ion-item>
+        <ion-label class="primarylabel">Color</ion-label>
+        <ion-select (click)="prepareColorSelector()" (ionChange)="setColor(this.color)" [(ngModel)]="color">
+          <ion-option (ionSelect)="selectColor(optioncolor)" *ngFor="let optioncolor of colors" [value]="optioncolor">{{optioncolor}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-row>
+    <ion-row class="imageselect image_{{image}}">
+      <ion-item>
+        <ion-label class="primarylabel">Image</ion-label>
+        <ion-select (click)="prepareImageSelector()" (ionChange)="setImage(this.image)" [(ngModel)]="image">
+          <ion-option (ionSelect)="selectImage(optionimage)" *ngFor="let optionimage of images" [value]="optionimage">{{optionimage}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-row>
+  </ion-list>
 </ion-content>
