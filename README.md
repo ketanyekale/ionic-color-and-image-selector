@@ -6,4 +6,11 @@ Color and Image Selector for Ionic
 3. Update the colors and image names in home.ts and home.scss.
 4. Pay attention to the syntax while updating varibles in home.scss. The colors and image are stored as SCSS list datatype.
 5. You need to modify setImage and setColor methods in home.ts to use the selected values.
+
+
+![color and image](https://github.com/ketanyekale/ionic-color-and-image-selector/wiki/images/ion_select_for_color_and_images.PNG)
+
+![image](https://github.com/ketanyekale/ionic-color-and-image-selector/wiki/images/ion_select_for_images.PNG)
+
+![color](https://github.com/ketanyekale/ionic-color-and-image-selector/wiki/images/ion_select_for_color.PNG)
  
