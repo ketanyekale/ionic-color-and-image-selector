@@ -1,0 +1,8 @@
+{
+  "name": "ionic-color-and-image-selector",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
