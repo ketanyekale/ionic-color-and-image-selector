@@ -8,11 +8,11 @@ Color and Image Selector for Ionic
 5. You need to modify setImage and setColor methods in home.ts to use the selected values.
 
 
-![color and image](/ketanyekale/ionic-color-and-image-selector/wiki/images/ion_select_for_color_and_images.PNG)
+![color and image](https://github.com/ketanyekale/ionic-color-and-image-selector/wiki/images/ion_select_for_color_and_images.PNG)
 
-![image](/ketanyekale/ionic-color-and-image-selector/wiki/images/ion_select_for_images.PNG)
+![image](https://github.com/ketanyekale/ionic-color-and-image-selector/wiki/images/ion_select_for_images.PNG)
 
-![color](/ketanyekale/ionic-color-and-image-selector/wiki/images/ion_select_for_color.PNG)
+![color](https://github.com/ketanyekale/ionic-color-and-image-selector/wiki/images/ion_select_for_color.PNG)
 
-![image with label](/ketanyekale/ionic-color-and-image-selector/wiki/images/ion_select_for_image_with_label.PNG)
+![image with label](https://github.com/ketanyekale/ionic-color-and-image-selector/wiki/images/ion_select_for_image_with_label.PNG)
  
