@@ -1,28 +1,36 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Color And image selector
-    </ion-title>
-  </ion-navbar>
+	<ion-navbar>
+		<ion-title>
+			Color And image selector
+		</ion-title>
+	</ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-row class="colorselect color_{{color.slice(1,7)}}">
-      <ion-item>
-        <ion-label class="primarylabel">Color</ion-label>
-        <ion-select (click)="prepareColorSelector()" (ionChange)="setColor(this.color)" [(ngModel)]="color">
-          <ion-option (ionSelect)="selectColor(optioncolor)" *ngFor="let optioncolor of colors" [value]="optioncolor">{{optioncolor}}</ion-option>
-        </ion-select>
-      </ion-item>
-    </ion-row>
-    <ion-row class="imageselect image_{{image}}">
-      <ion-item>
-        <ion-label class="primarylabel">Image</ion-label>
-        <ion-select (click)="prepareImageSelector()" (ionChange)="setImage(this.image)" [(ngModel)]="image">
-          <ion-option (ionSelect)="selectImage(optionimage)" *ngFor="let optionimage of images" [value]="optionimage">{{optionimage}}</ion-option>
-        </ion-select>
-      </ion-item>
-    </ion-row>
-  </ion-list>
+	<ion-list>
+		<ion-row class="colorselect color_{{color.slice(1,7)}}">
+			<ion-item>
+				<ion-label class="primarylabel">Color</ion-label>
+				<ion-select (click)="prepareColorSelector()" (ionChange)="setColor(this.color)" [(ngModel)]="color">
+					<ion-option (ionSelect)="selectColor(optioncolor)" *ngFor="let optioncolor of colors" [value]="optioncolor">{{optioncolor}}</ion-option>
+				</ion-select>
+			</ion-item>
+		</ion-row>
+		<ion-row class="imageselect image_{{image}}">
+			<ion-item>
+				<ion-label class="primarylabel">Image</ion-label>
+				<ion-select (click)="prepareImageSelector()" (ionChange)="setImage(this.image)" [(ngModel)]="image">
+					<ion-option (ionSelect)="selectImage(optionimage)" *ngFor="let optionimage of images" [value]="optionimage">{{optionimage}}</ion-option>
+				</ion-select>
+			</ion-item>
+		</ion-row>
+		 <ion-row class="imagewithlabelselect image_{{imagewithlabel}}">
+			<ion-item>
+				<ion-label class="primarylabel">Image with Label</ion-label>
+				<ion-select (click)="prepareImageWithLabelSelector()" (ionChange)="setImageWithLabel(this.imagewithlabel)" [(ngModel)]="imagewithlabel">
+					<ion-option *ngFor="let optionimage of images" [value]="optionimage">{{optionimage}}</ion-option>
+				</ion-select>
+			</ion-item>
+		</ion-row>
+	</ion-list>
 </ion-content>

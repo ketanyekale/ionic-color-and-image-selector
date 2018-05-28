@@ -1,78 +1,96 @@
 page-home {}
 
 .colorselect {
-    .select-text {
-        width: 75px;
-        border-radius: 5px;
-    }
+		.select-text {
+				width: 75px;
+				border-radius: 5px;
+		}
 
-    .alert-radio-inner,
-    .alert-radio-icon,
-    .alert-radio-label {
-        display: none;
-    }
+		.alert-radio-inner,
+		.alert-radio-icon,
+		.alert-radio-label {
+				display: none;
+		}
 
-    &.colorselected:before {
-        content: '\2713';
-        color: white;
-        z-index: 999999;
-        width: 100%;
-        height: 100%;
-        font-size: 33px;
-        left: 50%;
-        top: 50%;
-        position: relative;
-        transform: translate(-50%);
-    }
+		&.colorselected:before {
+				content: '\2713';
+				color: white;
+				z-index: 999999;
+				width: 100%;
+				height: 100%;
+				font-size: 33px;
+				left: 50%;
+				top: 50%;
+				position: relative;
+				transform: translate(-50%);
+		}
 
-    $colorsToSelect: "#d435a2" "#a834bf" "#6011cf" "#0d0e81" "#0237f1" "#0d8bcd" "#16aca4" "#3c887e" "#157145" "#57a773" "#88aa3d" "#b7990d" "#fcbf55" "#ff8668" "#ff5c6a" "#c2454c" "#c2183f" "#d8226b" "#8f2d56" "#482971" "#000000" "#561f37" "#433835" "#797979" "#819595";
+		$colorsToSelect: "#d435a2" "#a834bf" "#6011cf" "#0d0e81" "#0237f1" "#0d8bcd" "#16aca4" "#3c887e" "#157145" "#57a773" "#88aa3d" "#b7990d" "#fcbf55" "#ff8668" "#ff5c6a" "#c2454c" "#c2183f" "#d8226b" "#8f2d56" "#482971" "#000000" "#561f37" "#433835" "#797979" "#819595";
 
-    @each $colorOption in $colorsToSelect {
-        $colorWithoutHash: str-slice($colorOption, 2, 7);
+		@each $colorOption in $colorsToSelect {
+				$colorWithoutHash: str-slice($colorOption, 2, 7);
 
-        &.color_#{$colorWithoutHash} {
-            &, & .select-text {
-                color: #{$colorOption};
-                background-color: #{$colorOption};
-            }
-        }
-    }
+				&.color_#{$colorWithoutHash} {
+						&, & .select-text {
+								color: #{$colorOption};
+								background-color: #{$colorOption};
+						}
+				}
+		}
 }
 
 .imageselect {
-    .select-text {
-        width: 75px;
-        border-radius: 5px;
-        color: transparent;
-    }
+		.select-text {
+				width: 75px;
+				border-radius: 5px;
+				color: transparent;
+		}
 
-    .alert-radio-inner,
-    .alert-radio-icon,
-    .alert-radio-label {
-        display: none;
-    }
+		.alert-radio-inner,
+		.alert-radio-icon,
+		.alert-radio-label {
+				display: none;
+		}
 
-    &.imageselected:before {
-        content: '\2713';
-        color: color($colors, primary, base);
-        z-index: 999999;
-        width: 100%;
-        height: 100%;
-        font-size: 33px;
-        left: 50%;
-        top: 50%;
-        position: relative;
-        transform: translate(-50%);
-    }
+		&.imageselected:before {
+				content: '\2713';
+				color: color($colors, primary, base);
+				z-index: 999999;
+				width: 100%;
+				height: 100%;
+				font-size: 33px;
+				left: 50%;
+				top: 50%;
+				position: relative;
+				transform: translate(-50%);
+		}
 
-    $imagesToSelect: "img1", "img2", "img3", "img4", "img5", "img6", "img7", "img8", "img9", "img10";
+		$imagesToSelect: "img1", "img2", "img3", "img4", "img5", "img6", "img7", "img8", "img9", "img10";
 
-    @each $imageOption in $imagesToSelect {
-        &.image_#{$imageOption} {
-            &, & .select-text {
-                color: transparent;
-                background-image: url("/assets/imgs/#{$imageOption}.png");
-            }
-        }
-    }
+		@each $imageOption in $imagesToSelect {
+				&.image_#{$imageOption} {
+						&, & .select-text {
+								color: transparent;
+								background-image: url("/assets/imgs/#{$imageOption}.png");
+						}
+				}
+		}
+}
+
+.imagewithlabelselect {
+	$imagesToSelect: "img1", "img2", "img3", "img4", "img5", "img6", "img7", "img8", "img9", "img10";
+
+	@each $imageOption in $imagesToSelect {
+			&.image_#{$imageOption} {
+					& .select-text,& .alert-radio-label {
+						&:before{
+              content: " 1 2 3 4 5 6 ";
+              border-radius: 5px;
+              color: transparent;
+              background-image: url("/assets/imgs/#{$imageOption}.png");
+              margin-right: 8px;
+						}
+					}
+			}
+	}
 }

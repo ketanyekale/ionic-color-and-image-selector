@@ -9,7 +9,8 @@ export class HomePage {
 	colors: Array<string> = ['#d435a2', '#a834bf', '#6011cf', '#0d0e81', '#0237f1', '#0d8bcd', '#16aca4', '#3c887e', '#157145', '#57a773', '#88aa3d', '#b7990d', '#fcbf55', '#ff8668', '#ff5c6a', '#c2454c', '#c2183f', '#d8226b', '#8f2d56', '#482971', '#000000', '#561f37', '#433835', '#797979', '#819595'];
 	color: string = '#d435a2';
 	images: Array<string> = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7', 'img8', 'img9', 'img10'];
-	image: string = 'img1';
+  image: string = 'img1';
+  imagewithlabel: string = 'img1';
 	constructor(public navCtrl: NavController) {
 
 	}
@@ -90,5 +91,24 @@ export class HomePage {
 	setImage(image) {
 		console.log('Selected image is', image);
 
+	}
+	prepareImageWithLabelSelector() {
+		setTimeout(() => {
+			let buttonElements = document.querySelectorAll('div.alert-radio-group button');
+			if (!buttonElements.length) {
+				this.prepareImageWithLabelSelector();
+			} else {
+				for (let index = 0; index < buttonElements.length; index++) {
+					let buttonElement = buttonElements[index];
+					let optionLabelElement = buttonElement.querySelector('.alert-radio-label');
+					let image = optionLabelElement.innerHTML.trim();
+					buttonElement.classList.add('imagewithlabelselect', 'image_' + image);
+				}
+			}
+		}, 100);
+	}
+
+	setImageWithLabel(image) {
+		console.log('Selected image with label is', image);
 	}
 }
